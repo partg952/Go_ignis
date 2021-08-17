@@ -1,5 +1,5 @@
 import React from 'react'
-import '../../../assets/css/SliderSection.css';
+import './SliderSection.css';
 export default function SliderSection() {
     return (
         <div className='main-div'>
