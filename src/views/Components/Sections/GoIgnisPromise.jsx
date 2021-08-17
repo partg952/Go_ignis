@@ -1,5 +1,5 @@
 import React from 'react'
-import '../../../assets/css/GoIgnisPromise.css';
+import './GoIgnisPromise.css';
 import HandShake from '../../../assets/img/svg-export/handShake.svg';
 import Badge from '../../../assets/img/svg-export/badge.svg';
 import Truck from '../../../assets/img/svg-export/truck.svg';
