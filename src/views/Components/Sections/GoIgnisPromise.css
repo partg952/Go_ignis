@@ -1,0 +1,32 @@
+#main-container{
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    font-weight: bolder;
+}
+
+#main-container main{
+    display:flex;
+    flex-wrap: wrap;
+    align-items: center;
+    width: 100%;
+    justify-content: center;
+}
+
+#main-container img{
+    height: 130px;
+  
+    margin-top: 70px;
+}
+h3{
+    color: white;
+    font-weight: bolder;
+    font-size: 26px;
+}
+#main-container main div{
+    height: 300px;
+    width: 300px;
+    margin: 0;
+    
+}
