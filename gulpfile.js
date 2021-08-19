@@ -9,7 +9,7 @@ gulp.task("licenses", async function () {
       gap.prependText(`/*!
 
 =========================================================
-* Material Kit React - v1.10.0
+* Goignis - v1.10.0
 =========================================================
 
 * Product Page: https://www.creative-tim.com/product/now-ui-kit-pro-react
@@ -32,7 +32,7 @@ gulp.task("licenses", async function () {
       gap.prependText(`<!--
 
 =========================================================
-* Material Kit React - v1.10.0
+* Goignis- v1.10.0
 =========================================================
 
 * Product Page: https://www.creative-tim.com/product/now-ui-kit-pro-react
@@ -55,7 +55,7 @@ gulp.task("licenses", async function () {
       gap.prependText(`/*!
 
 =========================================================
-* Material Kit React - v1.10.0
+* Goignis - v1.10.0
 =========================================================
 
 * Product Page: https://www.creative-tim.com/product/now-ui-kit-pro-react

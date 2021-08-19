@@ -14,13 +14,32 @@ import CardBody from "components/Card/CardBody.js";
 import CardFooter from "components/Card/CardFooter.js";
 import Button from "components/CustomButtons/Button.js";
 import CustomInput from "components/CustomInput/CustomInput.js";
-
+import axios from 'axios';
 import styles from "assets/jss/material-kit-react/views/componentsSections/loginStyle.js";
 import { Phone } from "@material-ui/icons";
+import { send } from "q";
 
 const useStyles = makeStyles(styles);
 
+
+
 export default function SectionLogin() {
+
+  function sendMail(email,name,message){
+    console.log(email,message,name)
+    axios.post('https://goignis-api.herokuapp.com/send-mail',{
+      email:email,
+      message:message,
+      name:name
+    })  
+    .then(res=>{
+      console.log(res.data)
+      document.getElementById('success').style.display = 'block';
+    }).catch(err=>{
+      console.log(err);
+      alert('something went wrong please try again');
+    })
+  }
   const classes = useStyles();
   return (
     <div className={classes.section}>
@@ -28,7 +47,7 @@ export default function SectionLogin() {
         <GridContainer justify="center">
           <GridItem xs={12} sm={12} md={4}>
             <Card>
-              <form className={classes.form}>
+              <form className={classes.form}  >
                 <CardHeader color="primary" className={classes.cardHeader}>
                   <h4>Login</h4>
                   <div className={classes.socialLine}>
@@ -69,7 +88,8 @@ export default function SectionLogin() {
                 <CardBody>
                   <CustomInput
                     labelText="First Name..."
-                    id="first"
+                    id="firstname"
+                    name='firstname'
                     formControlProps={{
                       fullWidth: true,
                     }}
@@ -84,7 +104,8 @@ export default function SectionLogin() {
                   />
                     <CustomInput
                     labelText="Last Name..."
-                    id="first"
+                    id="lastname"
+                    name='lastname'
                     formControlProps={{
                       fullWidth: true,
                     }}
@@ -100,6 +121,7 @@ export default function SectionLogin() {
                   <CustomInput
                     labelText="Email..."
                     id="email"
+                    name='email'
                     formControlProps={{
                       fullWidth: true,
                     }}
@@ -115,6 +137,7 @@ export default function SectionLogin() {
                    <CustomInput
                     labelText="Phone"
                     id="phone"
+                    name='phone'
                     formControlProps={{
                       fullWidth: true,
                     }}
@@ -130,13 +153,22 @@ export default function SectionLogin() {
                   <h6>Message</h6>
           <textarea
        style={{width:'100%'}}        
-       name="textarea"
           rows={5}
           cols={40}
+          id='message'
+          name='message'
         />  
+        <h5 style={{display:'none',textAlign:'center'}} id='success'>Your message has been received by us</h5>
                 </CardBody>
-                <CardFooter className={classes.cardFooter}>
-                  <Button simple color="primary" size="lg">
+                <CardFooter className={classes.cardFooter} >
+                  <Button onClick={()=>{
+
+                    let name = document.getElementById('firstname').value + document.getElementById('lastname').value
+                    let email = document.getElementById('email').value;
+                    let message = document.getElementById('message').value;
+                    console.log(name)
+                    sendMail(email,name,message)
+                  }} simple color="primary" size="lg" >
                     Submit
                   </Button>
                 </CardFooter>
