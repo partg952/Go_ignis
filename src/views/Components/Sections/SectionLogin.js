@@ -162,7 +162,7 @@ export default function SectionLogin() {
                 </CardBody>
                 <CardFooter className={classes.cardFooter} >
                   <Button onClick={()=>{
-
+		    console.log('clicked')
                     let name = document.getElementById('firstname').value + document.getElementById('lastname').value
                     let email = document.getElementById('email').value;
                     let message = document.getElementById('message').value;
