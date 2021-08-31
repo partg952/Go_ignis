@@ -14,6 +14,9 @@ import SectionTabs from './Sections/SectionTabs';
 import styles from "assets/jss/material-kit-react/views/components.js";
 import SectionCarousel from './Sections/SectionCarousel';
 import tawkTo from "tawkto-react";
+import HeaderLinks from '../../components/Header/HeaderLinks';
+import ParallaxBackground from '../../assets/img/parallax-back.webp'
+import ContactInfo from "./Sections/ContactInfo";
 const useStyles = makeStyles(styles);
 
 export default function Components() {
@@ -28,11 +31,13 @@ export default function Components() {
   })
   return (
     <div>
+    <ContactInfo/>
       <Header
         brand={
             <img src={Logo} height="200px"/>
 
       } // prettier-ignore
+      rightLinks={<HeaderLinks/>}
         fixed
         color="transparent"
         changeColorOnScroll={{
@@ -40,7 +45,7 @@ export default function Components() {
           color: "white",
         }}
       />
-      <Parallax image="https://static.wixstatic.com/media/11062b_e34279a10c994e13939684cd984a3fb6~mv2_d_4636_3091_s_4_2.jpg/v1/fill/w_980,h_587,al_c,q_85,usm_0.66_1.00_0.01/11062b_e34279a10c994e13939684cd984a3fb6~mv2_d_4636_3091_s_4_2.webp">
+      <Parallax image={ParallaxBackground}>
         <div className={classes.container}>
           <GridContainer>
             <GridItem>
@@ -62,10 +67,8 @@ export default function Components() {
       </Parallax>
 
       <div className={classNames(classes.main, classes.mainRaised)}>
-      <SectionTabs/>
-      <SliderSection/>
-      <GoIgnisPromise/>
       <SectionCarousel/>
+      <GoIgnisPromise/>
       <SectionLogin/>
       </div>
     </div>

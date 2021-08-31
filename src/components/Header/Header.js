@@ -44,13 +44,15 @@ export default function Header(props) {
       document.body
         .getElementsByTagName("header")[0]
         .classList.add(classes[changeColorOnScroll.color]);
-    } else {
-      document.body
+        document.getElementById('logo-button').style.marginTop = '0px';
+      } else {
+        document.body
         .getElementsByTagName("header")[0]
         .classList.add(classes[color]);
-      document.body
+        document.body
         .getElementsByTagName("header")[0]
         .classList.remove(classes[changeColorOnScroll.color]);
+        document.getElementById('logo-button').style.marginTop = '30px';
     }
   };
   const { color, rightLinks, leftLinks, brand, fixed, absolute } = props;
@@ -60,7 +62,7 @@ export default function Header(props) {
     [classes.absolute]: absolute,
     [classes.fixed]: fixed,
   });
-  const brandComponent = <Button style={{height:'100px'}} className={classes.title}>{brand}</Button>;
+  const brandComponent = <Button style={{height:'100px',marginTop:'30px'}} id='logo-button'  className={classes.title}>{brand}</Button>;
   return (
     <AppBar className={appBarClasses}>
       <Toolbar className={classes.container}>
