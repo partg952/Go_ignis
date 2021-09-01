@@ -20,7 +20,7 @@ import HeaderLinks from '../../components/Header/HeaderLinks';
 import ParallaxBackground from '../../assets/img/parallax-back.webp'
 import ContactInfo from "./Sections/ContactInfo";
 import Footer from './Sections/Footer';
-import Carousel from './Sections/Carousel';
+import SectionCarasouel from './Sections/Carousel';
 import Background2 from '../../assets/img/image-parallax2.png';
 import Background3 from '../../assets/img/image-parallax3.png';
 const useStyles = makeStyles(styles);
@@ -120,7 +120,7 @@ export default function Components() {
       <div className={classNames(classes.main, classes.mainRaised)}>
       <SectionCarousel/>
       <GoIgnisPromise/>
-      <Carousel/>
+      <SectionCarasouel/>
       <SectionLogin/>
       <Footer/>
       </div>
