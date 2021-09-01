@@ -45,6 +45,7 @@ export default function Parallax(props) {
   });
   return (
     <div
+    ref={props.parallaxRef}
       className={parallaxClasses}
       style={{
         ...style,
