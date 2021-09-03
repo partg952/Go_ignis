@@ -17,10 +17,7 @@ function ContactInfo() {
                 <EmailIcon/>
                 <p>rohit@goignis.com</p>
             </div>
-            <div id="log">
-                <Button style={buttonStyle}>Login</Button>
-                <Button style={buttonStyle}>Sign Up</Button>
-            </div>
+          
         </div>
     )
 }

@@ -36,39 +36,26 @@ export default function Components() {
     margin:'10px',
     fontSize:'16px'
   }
-  let timer;
   
-  function changeIndex(i){
-    setIndex(i);
-  }
-  function startTimer(){
-
-    timer = setTimeout(()=>{
-      if(index === 2){
-        setIndex(0)
-        ParallaxRef.current.style.animation = 'animation: fadeinout 4s linear 1 forwards;'
-        
-      }
-      else{
-        setIndex(index+1)
-        ParallaxRef.current.style.animation = 'animation: fadeinout 4s linear 1 forwards;'
-        
-      }
-      
-    },3000)
-  }
   React.useEffect(()=>{
     tawkTo('6126206e649e0a0a5cd2dc2f','1fduetcb0')
-    startTimer();
-    
+    window.addEventListener('scroll',()=>{
+      if(window.pageYOffset > 100){
+        document.getElementById('logo-image').style.height = '130px'
+      }
+      else{
+        document.getElementById('logo-image').style.height = '200px';
+      }
+    })    
 
   })
+ 
   return (
     <div>
     <ContactInfo/>
       <Header
         brand={
-            <img src={Logo} height="200px"/>
+            <img src={Logo} height="200px" id='logo-image'/>
 
       } // prettier-ignore
       rightLinks={<HeaderLinks/>}
@@ -79,7 +66,7 @@ export default function Components() {
           color: "white", 
         }}
       />
-      <Parallax image={images[index]} parallaxRef={ParallaxRef}>
+      <Parallax>
         <div className={classes.container}>
           <GridContainer>
             <GridItem>
@@ -88,29 +75,6 @@ export default function Components() {
                 <h3 className={classes.subtitle}>
                   Your Fire Protection Design Partner
                 </h3>
-              </div>
-              <div>
-                <Button style={buttonStyle}>CAD Drafting</Button>
-                <Button style={buttonStyle}>Pre-Bid Design</Button>
-                <Button style={buttonStyle}>Permit Design</Button>
-                <Button style={buttonStyle}>As-Built Drawings</Button>
-              </div>
-              <div id="nav-buttons">
-              <button id='1' onClick={()=>{
-                clearTimeout(timer)
-                startTimer();
-                changeIndex(0)
-              }}></button>
-                <button id='2' onClick={()=>{
-                  clearTimeout(timer)
-                  startTimer();
-                  changeIndex(1)
-                }}></button>
-                <button id='3' onClick={()=>{
-                  clearTimeout(timer)
-                  startTimer();
-                  changeIndex(2)
-                }}></button>
               </div>
             </GridItem>
           </GridContainer>

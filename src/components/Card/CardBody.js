@@ -20,7 +20,14 @@ export default function CardBody(props) {
     [className]: className !== undefined,
   });
   return (
-    <div className={cardBodyClasses} {...rest}>
+    <div className={cardBodyClasses} style={{
+      textAlign:'center',
+      alignItems:'center',
+      width:'100%',
+      marginRight:'auto',
+      marginLeft:'auto',
+      justifyContent:'space-around'
+    }} {...rest}>
       {children}
     </div>
   );

@@ -7,7 +7,6 @@ import People from "@material-ui/icons/People";
 import Email from "@material-ui/icons/Email";
 // core components
 import GridContainer from "components/Grid/GridContainer.js";
-import GridItem from "components/Grid/GridItem.js";
 import Card from "components/Card/Card.js";
 import CardHeader from "components/Card/CardHeader.js";
 import CardBody from "components/Card/CardBody.js";
@@ -18,7 +17,7 @@ import axios from 'axios';
 import styles from "assets/jss/material-kit-react/views/componentsSections/loginStyle.js";
 import { Phone } from "@material-ui/icons";
 import { send } from "q";
-
+import './SectionLogin.scss';
 const useStyles = makeStyles(styles);
 
 
@@ -44,119 +43,82 @@ export default function SectionLogin() {
   return (
     <div className={classes.section}>
       <div className={classes.container}>
-        <GridContainer justify="center">
-          <GridItem xs={12} sm={12} md={4}>
-            <Card>
-              <form className={classes.form}  >
-                <CardHeader color="primary" className={classes.cardHeader}>
-                  <h4>Login</h4>
-                  <div className={classes.socialLine}>
-                    <Button
-                      justIcon
-                      href="#pablo"
-                      target="_blank"
-                      color="transparent"
-                      onClick={(e) => e.preventDefault()}
-                    >
-                      <i className={classes.socialIcons + " fab fa-twitter"} />
-                    </Button>
-                    <Button
-                      justIcon
-                      href="#pablo"
-                      target="_blank"
-                      color="transparent"
-                      onClick={(e) => e.preventDefault()}
-                    >
-                      <i className={classes.socialIcons + " fab fa-facebook"} />
-                    </Button>
-                    <Button
-                      justIcon
-                      href="#pablo"
-                      target="_blank"
-                      color="transparent"
-                      onClick={(e) => e.preventDefault()}
-                    >
-                      <i
-                        className={
-                          classes.socialIcons + " fab fa-google-plus-g"
-                        }
+        <GridContainer justify="center" className='container' style={{width:'auto',margin:'0 auto '}}>
+        <Card>
+        <form className={classes.form} style={{padding:'5px'}}  >
+        <CardHeader color="primary" className={classes.cardHeader}>
+        <h3>Get In Touch</h3>
+        </CardHeader>
+                <CardBody  style={{
+                  padding:'0px',
+                  textAlign:'center',
+
+                }}>
+                <div id="inputs" style={{
+                }}>
+                <CustomInput
+                labelText="First Name"
+                id="firstname"
+                name='firstname'  
+                
+                    inputProps={{
+                      type: "text",
+                      endAdornment: (
+                        <InputAdornment position="end">
+                        <People className={classes.inputIconsColor} />
+                        </InputAdornment>
+                        ),
+                      }}
                       />
-                    </Button>
-                  </div>
-                </CardHeader>
-               
-                <CardBody>
-                  <CustomInput
-                    labelText="First Name..."
-                    id="firstname"
-                    name='firstname'
-                    formControlProps={{
-                      fullWidth: true,
-                    }}
+                      <CustomInput
+                      labelText="Last Name"
+                      id="lastname"
+                      name='lastname'
                     inputProps={{
                       type: "text",
                       endAdornment: (
                         <InputAdornment position="end">
-                          <People className={classes.inputIconsColor} />
-                        </InputAdornment>
-                      ),
-                    }}
-                  />
-                    <CustomInput
-                    labelText="Last Name..."
-                    id="lastname"
-                    name='lastname'
-                    formControlProps={{
-                      fullWidth: true,
-                    }}
-                    inputProps={{
-                      type: "text",
-                      endAdornment: (
-                        <InputAdornment position="end">
-                          <People className={classes.inputIconsColor} />
-                        </InputAdornment>
-                      ),
-                    }}
-                  />
+                        <People className={classes.inputIconsColor} />
+                          </InputAdornment>
+                          ),
+                        }}
+                        />
                   <CustomInput
-                    labelText="Email..."
+                  labelText="Email..."
                     id="email"
                     name='email'
-                    formControlProps={{
-                      fullWidth: true,
-                    }}
+                    
                     inputProps={{
                       type: "email",
                       endAdornment: (
                         <InputAdornment position="end">
-                          <Email className={classes.inputIconsColor} />
+                        <Email className={classes.inputIconsColor} />
                         </InputAdornment>
-                      ),
+                        ),
                     }}
                   />
                    <CustomInput
-                    labelText="Phone"
+                   labelText="Phone"
                     id="phone"
                     name='phone'
-                    formControlProps={{
-                      fullWidth: true,
-                    }}
+                    
                     inputProps={{
                       type: "phone",
                       endAdornment: (
                         <InputAdornment position="end">
-                          <Phone className={classes.inputIconsColor} />
+                        <Phone className={classes.inputIconsColor} />
                         </InputAdornment>
                       ),
                     }}
-                  />
-                  <h6>Message</h6>
-          <textarea
-       style={{width:'100%'}}        
-          rows={5}
-          cols={40}
-          id='message'
-          name='message'
+                    />
+                    </div>
+                    <h6>Message</h6>
+                    <textarea
+                    style={{width:'80%'}}        
+                    rows={5}
+                    cols={40}
+                    id='message'
+                    name='message'
         />  
         <h5 style={{display:'none',textAlign:'center'}} id='success'>Your message has been received by us</h5>
                 </CardBody>
@@ -174,7 +136,6 @@ export default function SectionLogin() {
                 </CardFooter>
               </form>
             </Card>
-          </GridItem>
         </GridContainer>
       </div>
     </div>

@@ -54,7 +54,10 @@ export default function CustomInput(props) {
     formControlClasses = classes.formControl;
   }
   return (
-    <FormControl {...formControlProps} className={formControlClasses}>
+    <FormControl {...formControlProps} style={{
+      margin:'5px',
+      width:'40%',
+    }}  className={formControlClasses}>
       {labelText !== undefined ? (
         <InputLabel
           className={classes.labelRoot + " " + labelClasses}
@@ -65,6 +68,7 @@ export default function CustomInput(props) {
         </InputLabel>
       ) : null}
       <Input
+      variant="outlined"
         classes={{
           input: inputClasses,
           root: marginTop,

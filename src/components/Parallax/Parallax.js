@@ -1,10 +1,16 @@
 import React from "react";
+import {useState} from 'react';
 // nodejs library that concatenates classes
 import classNames from "classnames";
 // nodejs library to set properties for components
 import PropTypes from "prop-types";
 // @material-ui/core components
+import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
+import { Carousel } from 'react-responsive-carousel';
 import { makeStyles } from "@material-ui/core/styles";
+import Background2 from '../../assets/img/image-parallax2.png';
+import Background3 from '../../assets/img/image-parallax3.png';
+import ParallaxBackground from '../../assets/img/parallax-back.webp'
 
 // core components
 import styles from "assets/jss/material-kit-react/components/parallaxStyle.js";
@@ -12,6 +18,8 @@ import styles from "assets/jss/material-kit-react/components/parallaxStyle.js";
 const useStyles = makeStyles(styles);
 
 export default function Parallax(props) {
+  const [index,setIndex] = useState(0);
+  const [images,addImages] = useState([ParallaxBackground,Background2,Background3]);
   let windowScrollTop;
   if (window.innerWidth >= 768) {
     windowScrollTop = window.pageYOffset / 3;
@@ -42,17 +50,45 @@ export default function Parallax(props) {
     [classes.filter]: filter,
     [classes.small]: small,
     [className]: className !== undefined,
+
   });
+  let timer;
+  function startTimer(){
+
+  timer = setTimeout(()=>{
+  if(index === 2){
+    setIndex(0)
+    
+  }
+  else{
+    setIndex(index+1)    
+  }
+  
+},3000)
+}
+startTimer();
   return (
-    <div
-    ref={props.parallaxRef}
-      className={parallaxClasses}
-      style={{
-        ...style,
-        backgroundImage: "url(" + image + ")",
-        transform: transform,
-      }}
-    >
+    <div  ref={props.parallaxRef} className={parallaxClasses}>
+      <div style={{
+      height:'100%',
+      width:'100%',
+      position: 'absolute',
+      top:'0',
+      left:'0',
+    }}>
+      <Carousel interval={5000} autoPlay={true} infiniteLoop={true} showIndicators={false} showThumbs={false} showArrows={false}>
+        <div>
+        <img src={ParallaxBackground} alt="" />
+        </div>
+        <div>
+          <img src="https://drawfolio.s3.amazonaws.com/public/system/pictures/images/000/124/311/original/cad-drafting.jpg?1523953504" alt="" />
+        </div>
+        <div>
+          <img src={Background3} alt="" />
+        </div>
+      </Carousel>
+      
+      </div>
       {children}
     </div>
   );

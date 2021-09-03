@@ -7,7 +7,6 @@ const loginStyle = {
     minHeight: "110vh",
     maxHeight: "1600px",
     overflow: "hidden",
-    padding: "70px 0",
     backgroundPosition: "top center",
     backgroundSize: "cover",
     margin: "0",
@@ -26,7 +25,6 @@ const loginStyle = {
     marginLeft: "20px",
     marginRight: "20px",
     marginTop: "-40px",
-    padding: "20px 0",
     marginBottom: "15px",
   },
   socialIcons: {

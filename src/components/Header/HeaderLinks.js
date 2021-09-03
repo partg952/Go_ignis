@@ -25,7 +25,12 @@ const useStyles = makeStyles(styles);
 export default function HeaderLinks(props) {
   const classes = useStyles();
   return (
-    <List className={classes.list}>
+    <List className={classes.list} style={{
+      display:'flex',
+      flexWrap:'wrap',
+      alignItems:'center',
+      justifyContent:'center'
+    }}>
       <ListItem className={classes.listItem}>
         <Button
         color="transparent"
@@ -67,6 +72,33 @@ export default function HeaderLinks(props) {
           className={classes.navLink}
         >
           About
+        </Button>
+      </ListItem>
+      <ListItem className={classes.listItem}>
+        <Button
+           style={{
+             backgroundColor:'red',
+             height:'30px',
+             margin:'5px'
+           }}
+          target="_blank"
+          className={classes.navLink}
+        >
+          SignUp
+        </Button>
+      </ListItem>
+      <ListItem className={classes.listItem}>
+        <Button
+        style={{
+             backgroundColor:'red',
+             height:'30px', 
+             margin:'5px'
+           }}
+           color="red"
+          target="_blank"
+          className={classes.navLink}
+        >
+          Login
         </Button>
       </ListItem>
     
