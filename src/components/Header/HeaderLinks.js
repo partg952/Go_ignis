@@ -32,47 +32,57 @@ export default function HeaderLinks(props) {
       justifyContent:'center'
     }}>
       <ListItem className={classes.listItem}>
+      <Link to='/services'>
+      <Button
+      color="transparent"
+      target="_blank"
+      className={classes.navLink}
+      >Services</Button>
+      </Link>
+      </ListItem>
+      <ListItem className={classes.listItem}>
+        <Link to='/pricing'>
         <Button
         color="transparent"
-          target="_blank"
-          className={classes.navLink}
-        >Services</Button>
-      </ListItem>
-      <ListItem className={classes.listItem}>
-        <Button
-           color="transparent"
-          target="_blank"
-          className={classes.navLink}
+        target="_blank"
+        className={classes.navLink}
         >
-          Pricing
+        Pricing
         </Button>
+        </Link>
       </ListItem>
       <ListItem className={classes.listItem}>
+      <Link to='/resources'>
         <Button
-           color="transparent"
-          target="_blank"
-          className={classes.navLink}
+        color="transparent"
+        target="_blank"
+        className={classes.navLink}
         >
-          Resources
+        Resources
         </Button>
+      </Link>
       </ListItem>
       <ListItem className={classes.listItem}>
-        <Button
-           color="transparent"
+        <Link to='/contact'>
+          <Button
+          color="transparent"
           target="_blank"
           className={classes.navLink}
-        >
+          >
           Contact
-        </Button>
+          </Button>
+        </Link>
       </ListItem>
       <ListItem className={classes.listItem}>
+      <Link to='/about'>
         <Button
-           color="transparent"
-          target="_blank"
-          className={classes.navLink}
+        color="transparent"
+        target="_blank"
+        className={classes.navLink}
         >
-          About
+        About
         </Button>
+      </Link>
       </ListItem>
       <ListItem className={classes.listItem}>
         <Button

@@ -18,12 +18,18 @@ import styles from "assets/jss/material-kit-react/views/componentsSections/login
 import { Phone } from "@material-ui/icons";
 import { send } from "q";
 import './SectionLogin.scss';
+import { useMediaQuery } from 'react-responsive'
+
 const useStyles = makeStyles(styles);
 
 
 
 export default function SectionLogin() {
-
+  const dimensions = {
+    width:'60%',
+    margin:'0 auto '
+  }
+  const breakPoint = useMediaQuery({maxWidth:430})
   function sendMail(email,name,message){
     console.log(email,message,name)
     axios.post('https://goignis-api.herokuapp.com/send-mail',{
@@ -39,11 +45,15 @@ export default function SectionLogin() {
       alert('something went wrong please try again');
     })
   }
+
+  if(breakPoint){
+    dimensions.width = '90%'
+  }
   const classes = useStyles();
   return (
     <div className={classes.section}>
       <div className={classes.container}>
-        <GridContainer justify="center" className='container' style={{width:'60%',margin:'0 auto '}}>
+        <GridContainer justify="center" className='container' style={dimensions}>
         <Card>
         <form className={classes.form} style={{padding:'5px'}}  >
         <CardHeader color="primary" className={classes.cardHeader}>

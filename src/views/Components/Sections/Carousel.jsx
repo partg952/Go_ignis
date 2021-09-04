@@ -16,6 +16,7 @@ import Card from "components/Card/Card.js";
 import image1 from "assets/img/bg.jpg";
 import image2 from "assets/img/bg2.jpg";
 import image3 from "assets/img/bg3.jpg";
+import { useMediaQuery } from 'react-responsive'
 
 import styles from "assets/jss/material-kit-react/views/componentsSections/carouselStyle.js";
 
@@ -24,6 +25,12 @@ const useStyles = makeStyles(styles);
 
 export default function SectionCarousel() {
   const classes = useStyles();
+  const dimensions = {
+    width:'60%',
+    height:'auto',
+    margin:'0 auto'
+  }
+  const breakPoint = useMediaQuery({maxWidth:440})
   const carouselRef = React.useRef(null);
 const onNextStart = (currentItem, nextItem) => {
   if (currentItem.index === nextItem.index) {
@@ -31,11 +38,12 @@ const onNextStart = (currentItem, nextItem) => {
   }
 };
 
+if(breakPoint){
+  dimensions.width = '100%';
+}
+
   return (
-    <div  style={{
-      height:'auto',
-      
-    }}>
+    <div  style={dimensions}>
       <div style={{
         height:'auto'
       }}>

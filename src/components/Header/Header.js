@@ -3,6 +3,7 @@ import React from "react";
 import classNames from "classnames";
 // nodejs library to set properties for components
 import PropTypes from "prop-types";
+import { useHistory } from "react-router";
 // @material-ui/core components
 import { makeStyles } from "@material-ui/core/styles";
 import AppBar from "@material-ui/core/AppBar";
@@ -16,10 +17,10 @@ import Menu from "@material-ui/icons/Menu";
 // core components
 import styles from "assets/jss/material-kit-react/components/headerStyle.js";
 
-const useStyles = makeStyles(styles);
-
 export default function Header(props) {
+  const useStyles = makeStyles(styles);
   const classes = useStyles();
+  const history = useHistory();
   const [mobileOpen, setMobileOpen] = React.useState(false);
   React.useEffect(() => {
     if (props.changeColorOnScroll) {
@@ -76,7 +77,9 @@ export default function Header(props) {
             </Hidden>
           ) : (
             <>
-            <Button style={{height:'50px',marginTop:'40px'}} id='logo-button'  className={classes.title}>{brand}</Button>;
+            <Button style={{height:'50px',marginTop:'40px'}} onClick={()=>{
+              history.push("/")
+            }} id='logo-button'  className={classes.title}>{brand}</Button>;
             </>
           )}
         </div>

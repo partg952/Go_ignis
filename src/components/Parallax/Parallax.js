@@ -52,21 +52,17 @@ export default function Parallax(props) {
     [className]: className !== undefined,
 
   });
-  let timer;
-  function startTimer(){
-
-  timer = setTimeout(()=>{
-  if(index === 2){
-    setIndex(0)
-    
-  }
-  else{
-    setIndex(index+1)    
-  }
   
-},3000)
+
+const divStyle={
+  height:'100%',
+  width:'100%',
 }
-startTimer();
+const imageStyle = {
+  height:'100%',
+  width:'100%',
+  objectFit:'cover'
+}
   return (
     <div  ref={props.parallaxRef} className={parallaxClasses}>
       <div style={{
@@ -74,43 +70,17 @@ startTimer();
       width:'100%',
       position: 'absolute',
       zIndex:'-99',
-      top:'0',
       left:'0',
     }}>
       <Carousel  loop auto interval={3000}>
-        <div style={{
-          height:'100%',
-          width:'100%',
-        }}>
-        <img src={ParallaxBackground} alt="" style={{
-          height:'100%',
-            width:'100%',
-            objectFit:'cover'
-        }}/>
+        <div style={divStyle}>
+        <img src={ParallaxBackground} alt="" style={imageStyle}/>
         </div>
-        <div style={{
-          height:'100%',
-          width:'100%',
-          objectFit:'cover'
-
-        }}>
-          <img style={{
-            height:'100%',
-            width:'100%',
-            objectFit:'cover'
-
-          }} src="https://drawfolio.s3.amazonaws.com/public/system/pictures/images/000/124/311/original/cad-drafting.jpg?1523953504" alt="" />
+        <div style={divStyle}>
+          <img style={imageStyle} src="https://drawfolio.s3.amazonaws.com/public/system/pictures/images/000/124/311/original/cad-drafting.jpg?1523953504" alt="" />
         </div>
-        <div style={{
-          height:'100%',
-          width:'100%',
-        }}>
-          <img style={{
-            height:'100%',
-            width:'100%',
-            objectFit:'cover'
-
-          }} src={Background3} alt="" />
+        <div style={divStyle}>
+          <img style={imageStyle} src={Background3} alt="" />
         </div>
       </Carousel>
       
