@@ -6,7 +6,7 @@ import classNames from "classnames";
 import PropTypes from "prop-types";
 // @material-ui/core components
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
-import { Carousel } from 'react-responsive-carousel';
+import Carousel from 're-carousel'
 import { makeStyles } from "@material-ui/core/styles";
 import Background2 from '../../assets/img/image-parallax2.png';
 import Background3 from '../../assets/img/image-parallax3.png';
@@ -73,18 +73,44 @@ startTimer();
       height:'100%',
       width:'100%',
       position: 'absolute',
+      zIndex:'-99',
       top:'0',
       left:'0',
     }}>
-      <Carousel interval={5000} autoPlay={true} infiniteLoop={true} showIndicators={false} showThumbs={false} showArrows={false}>
-        <div>
-        <img src={ParallaxBackground} alt="" />
+      <Carousel  loop auto interval={3000}>
+        <div style={{
+          height:'100%',
+          width:'100%',
+        }}>
+        <img src={ParallaxBackground} alt="" style={{
+          height:'100%',
+            width:'100%',
+            objectFit:'cover'
+        }}/>
         </div>
-        <div>
-          <img src="https://drawfolio.s3.amazonaws.com/public/system/pictures/images/000/124/311/original/cad-drafting.jpg?1523953504" alt="" />
+        <div style={{
+          height:'100%',
+          width:'100%',
+          objectFit:'cover'
+
+        }}>
+          <img style={{
+            height:'100%',
+            width:'100%',
+            objectFit:'cover'
+
+          }} src="https://drawfolio.s3.amazonaws.com/public/system/pictures/images/000/124/311/original/cad-drafting.jpg?1523953504" alt="" />
         </div>
-        <div>
-          <img src={Background3} alt="" />
+        <div style={{
+          height:'100%',
+          width:'100%',
+        }}>
+          <img style={{
+            height:'100%',
+            width:'100%',
+            objectFit:'cover'
+
+          }} src={Background3} alt="" />
         </div>
       </Carousel>
       

@@ -20,6 +20,7 @@ import HeaderLinks from '../../components/Header/HeaderLinks';
 import ParallaxBackground from '../../assets/img/parallax-back.webp'
 import ContactInfo from "./Sections/ContactInfo";
 import Footer from './Sections/Footer';
+import Services from './Sections/Services';
 import SectionCarasouel from './Sections/Carousel';
 import Background2 from '../../assets/img/image-parallax2.png';
 import Background3 from '../../assets/img/image-parallax3.png';
@@ -71,9 +72,16 @@ export default function Components() {
           <GridContainer>
             <GridItem>
               <div className={classes.brand}>
-                <h1 className={classes.title}>GOIGNIS</h1>
-                <h3 className={classes.subtitle}>
-                  Your Fire Protection Design Partner
+                <h3 style={{
+                  color:'black'
+                }}>
+                 Design more FireAlarm jobs in less time
+                 <br />
+                 <strong> Save Time | Bid More Jobs | Design More Jobs</strong>
+                 <br />
+                True Cloud-Based assistance for your FireAlarm
+                <br />
+                design and drafting jobs   
                 </h3>
               </div>
             </GridItem>
@@ -82,6 +90,7 @@ export default function Components() {
       </Parallax>
 
       <div className={classNames(classes.main, classes.mainRaised)}>
+      <Services/>
       <SectionCarousel/>
       <GoIgnisPromise/>
       <SectionCarasouel/>

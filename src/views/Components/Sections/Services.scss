@@ -1,0 +1,29 @@
+.service-cards{
+    height: 300px;
+    width: 300px;
+    overflow: hidden;
+    position: relative;
+    margin: 10px;
+    text-align: center;
+    transition: all 200ms ease;
+    border-radius: 6px;
+    box-shadow:0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+    img{
+        height: 70%;
+        width: 100%;
+    }
+    h3{
+       color: black;
+        
+    }
+    
+   
+}
+
+.services{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
+}
+

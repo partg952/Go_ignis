@@ -1,4 +1,32 @@
 .cards{
-  height: 300px;
-  width:200px;
+  height: auto;
+  width:300px;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+  background-color: transparent;
+  h3{
+    color: black;
+    margin-top:100px ;
+  }
+  #back{
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: -9999;
+  }
+  
+  .people-image{
+    border-radius: 50px;
+    height: 80px;
+    width: 80px;
+    object-fit: cover;
+    display: flex;
+    margin-right: auto;
+    margin-left: auto;
+  }
 }
+

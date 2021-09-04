@@ -8,13 +8,17 @@ import { makeStyles } from "@material-ui/core/styles";
 import FormControl from "@material-ui/core/FormControl";
 import InputLabel from "@material-ui/core/InputLabel";
 import Input from "@material-ui/core/Input";
-
+import { useMediaQuery } from 'react-responsive'
 import styles from "assets/jss/material-kit-react/components/customInputStyle.js";
 
 const useStyles = makeStyles(styles);
 
 export default function CustomInput(props) {
   const classes = useStyles();
+  const dimensions = {
+    margin:'10px',
+    width:'45%'
+  }
   const {
     formControlProps,
     labelText,
@@ -26,7 +30,7 @@ export default function CustomInput(props) {
     inputRootCustomClasses,
     success,
   } = props;
-
+  const breakPoint = useMediaQuery({maxWidth:420})
   const labelClasses = classNames({
     [" " + classes.labelRootError]: error,
     [" " + classes.labelRootSuccess]: success && !error,
@@ -53,11 +57,11 @@ export default function CustomInput(props) {
   } else {
     formControlClasses = classes.formControl;
   }
+  if(breakPoint){
+    dimensions.width = '80%';
+  }
   return (
-    <FormControl {...formControlProps} style={{
-      margin:'5px',
-      width:'40%',
-    }}  className={formControlClasses}>
+    <FormControl {...formControlProps} style={dimensions}  className={formControlClasses}>
       {labelText !== undefined ? (
         <InputLabel
           className={classes.labelRoot + " " + labelClasses}

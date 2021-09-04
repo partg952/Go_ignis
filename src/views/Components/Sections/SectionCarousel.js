@@ -33,11 +33,11 @@ export default function SectionCarousel() {
             </Card>
           </GridItem>
           <GridItem xs={12} sm={12} md={6}>
-            <h2 className={classes.textCenter}>
-            <strong>Make your Fire Protection business more profitable</strong>
+            <h2>
+            <strong>Make your Fire Alarm business more profitable</strong>
             </h2>
 
-            <p className={classes.textCenter}>
+            <p>
               <h3 style={{color:'black'}}>
                 {" "}
                 
@@ -60,12 +60,12 @@ export default function SectionCarousel() {
 
          
           <GridItem xs={12} sm={12} md={8}>
-            <h2 className={classes.textCenter}>
-                <strong> Make your fire protection
+            <h2>
+                <strong> Make your Fire Alarm
                  business more efficient</strong>
             </h2>
 
-            <p className={classes.textCenter}>
+            <p>
               <h3 style={{color:'black'}}>
                 {" "}
                 

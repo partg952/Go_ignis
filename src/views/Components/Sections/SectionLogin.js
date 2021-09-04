@@ -43,7 +43,7 @@ export default function SectionLogin() {
   return (
     <div className={classes.section}>
       <div className={classes.container}>
-        <GridContainer justify="center" className='container' style={{width:'auto',margin:'0 auto '}}>
+        <GridContainer justify="center" className='container' style={{width:'60%',margin:'0 auto '}}>
         <Card>
         <form className={classes.form} style={{padding:'5px'}}  >
         <CardHeader color="primary" className={classes.cardHeader}>
