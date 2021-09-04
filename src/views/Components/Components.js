@@ -1,7 +1,6 @@
 import React from "react";
 import classNames from "classnames";
 import {useState} from 'react';
-import './Sections/Components.css';
 import { makeStyles } from "@material-ui/core/styles";
 import Logo from "../../assets/img/goignislogo.so.png";
 import Header from "components/Header/Header.js";

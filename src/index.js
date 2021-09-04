@@ -13,6 +13,7 @@ import LoginPage from "views/LoginPage/LoginPage.js";
 import AboutUs from "views/AboutUs/AboutUs";
 import Footer from "views/Components/Sections/Footer";
 import SectionLogin from "views/Components/Sections/SectionLogin";
+import Privacy from 'views/Privacy/Privacy';
 var hist = createBrowserHistory();
 
 ReactDOM.render(
@@ -23,6 +24,7 @@ ReactDOM.render(
       <Route path="/login-page" component={LoginPage} exact/>
       <Route path="/" component={Components} exact/>
       <Route path='/about' component={AboutUs} exact/>
+      <Route path='/privacy' component={Privacy} exact/>
     </Switch>
    
 
